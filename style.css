@@ -1,0 +1,148 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.chat-message {
+    display: flex;
+    align-items: flex-end; 
+    margin-bottom: 15px;
+    gap: 10px; 
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-bottom: 2px; 
+}
+
+.message-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8em;
+    color: #65676b;
+    margin-bottom: 5px;
+    white-space: nowrap; 
+}
+
+.message-bubble {
+    padding: 10px 15px;
+    max-width: 60%;
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;
+}
+
+.message-bubble p {
+    margin: 0;
+    text-align: center; 
+    width: 100%;
+}
+
+
+.user-1 {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.user-1 .avatar {
+    order: 1; 
+}
+
+.user-1 .message-info {
+    order: 2; 
+    align-items: flex-start;
+}
+
+.user-1 .message-bubble {
+    order: 3; 
+    background-color: #a0d4eb; 
+    color: #333;
+    border-radius: 15px 15px 15px 2px; 
+}
+
+
+
+.user-2 {
+    flex-direction: row-reverse; 
+    justify-content: flex-end;
+}
+
+.user-2 .avatar {
+    order: 1; 
+}
+
+.user-2 .message-info {
+    order: 2; 
+    align-items: flex-end;
+}
+
+.user-2 .message-info .user-name {
+    
+    order: 2; 
+}
+
+.user-2 .message-info .message-time {
+    order: 1;
+}
+
+.user-2 .message-bubble {
+    order: 3; 
+    background-color: #f7b4c6;
+    color: #333;
+    border-radius: 15px 15px 2px 15px; 
+}
+
+
+@media (max-width: 600px) {
+    
+    
+    .chat-message {
+        flex-direction: column; 
+        align-items: center;
+        gap: 5px;
+    }
+
+    .user-1, .user-2 {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .user-1 .avatar,
+    .user-2 .avatar {
+        order: 1;
+        margin-bottom: 0;
+    }
+
+    .user-1 .message-info,
+    .user-2 .message-info {
+        order: 2;
+        align-items: center; 
+    }
+    
+    .user-2 .message-info .user-name {
+        order: 1; 
+    }
+    
+    .user-2 .message-info .message-time {
+        order: 2;
+    }
+
+    .user-1 .message-bubble,
+    .user-2 .message-bubble {
+        order: 3;
+        max-width: 90%; 
+        border-radius: 15px; 
+    }
+}
